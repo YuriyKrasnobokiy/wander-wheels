@@ -10,6 +10,7 @@ export const theme = {
   colors: {
     buttonBgColor: '#3470ff',
     accentColor: '#0b44cd',
+    secondAccentColor: '#3470ff',
     buttonTextColor: '#fff',
     heartIconStrokeColor: 'rgba(255, 255, 255, 0.8)',
     filterLabelColor: '#8a8a89',
