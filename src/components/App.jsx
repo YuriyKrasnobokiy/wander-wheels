@@ -9,13 +9,18 @@ import Favorites from 'pages/Favorites/Favorites';
 export const theme = {
   colors: {
     buttonBgColor: '#3470ff',
+    textColor: '#121417',
+    secondTextColor: '#8a8a89',
     accentColor: '#0b44cd',
     secondAccentColor: '#3470ff',
     buttonTextColor: '#fff',
-    heartIconStrokeColor: 'rgba(255, 255, 255, 0.8)',
+    heartIconStrokeColor: '#858688',
     filterLabelColor: '#8a8a89',
     filterInputBackground: '#f7f7fb',
-    textColor: '#121417',
+    favoriteIconStroke: 'rgba(255, 255, 255, 0.8)',
+    modarOverlayColor: 'rgba(18, 20, 23, 0.5)',
+    modalBgColor: '#fff',
+    rentalCondLiBGColor: '#f9f9f9;',
   },
 };
 
