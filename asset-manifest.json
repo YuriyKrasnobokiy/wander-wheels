@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/wander-wheels/static/css/main.3a90c34c.css",
-    "main.js": "/wander-wheels/static/js/main.85205874.js",
+    "main.css": "/wander-wheels/static/css/main.0f32cb7c.css",
+    "main.js": "/wander-wheels/static/js/main.e30cc614.js",
     "index.html": "/wander-wheels/index.html",
-    "main.3a90c34c.css.map": "/wander-wheels/static/css/main.3a90c34c.css.map",
-    "main.85205874.js.map": "/wander-wheels/static/js/main.85205874.js.map"
+    "static/media/favoriteSvg.svg": "/wander-wheels/static/media/favoriteSvg.5efec6b49c7b5c068582885bd8d0b312.svg",
+    "static/media/crossSvg.svg": "/wander-wheels/static/media/crossSvg.b87e87a3d21ad011d1d2d2a66fd1c0bc.svg",
+    "main.0f32cb7c.css.map": "/wander-wheels/static/css/main.0f32cb7c.css.map",
+    "main.e30cc614.js.map": "/wander-wheels/static/js/main.e30cc614.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a90c34c.css",
-    "static/js/main.85205874.js"
+    "static/css/main.0f32cb7c.css",
+    "static/js/main.e30cc614.js"
   ]
 }
