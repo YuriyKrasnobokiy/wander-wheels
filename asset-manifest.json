@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/wander-wheels/static/css/main.3a90c34c.css",
-    "main.js": "/wander-wheels/static/js/main.46b15fd9.js",
+    "main.js": "/wander-wheels/static/js/main.85205874.js",
     "index.html": "/wander-wheels/index.html",
     "main.3a90c34c.css.map": "/wander-wheels/static/css/main.3a90c34c.css.map",
-    "main.46b15fd9.js.map": "/wander-wheels/static/js/main.46b15fd9.js.map"
+    "main.85205874.js.map": "/wander-wheels/static/js/main.85205874.js.map"
   },
   "entrypoints": [
     "static/css/main.3a90c34c.css",
-    "static/js/main.46b15fd9.js"
+    "static/js/main.85205874.js"
   ]
 }
