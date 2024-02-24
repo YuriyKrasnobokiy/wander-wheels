@@ -7,7 +7,8 @@ import { CarCard } from 'components/CarCard/CarCard';
 import { CarModal } from 'components/CarModal/CarModal';
 import { fetchCars, fetchMoreCars } from 'redux/cars/carsSlice';
 import { openModal } from 'redux/modal/modalSlice';
-// import { setCurrentPage } from 'redux/cars/carsSlice';
+import 'react-notifications/lib/notifications.css';
+import { NotificationContainer } from 'react-notifications';
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -62,6 +63,7 @@ const Catalog = () => {
           Load more
         </LoadMoreBtn>
         {isOpenModal && <CarModal modalData={modalData} />}
+        <NotificationContainer />
       </CatalogWrapper>
     </>
   );

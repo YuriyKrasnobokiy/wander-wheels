@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { NotificationManager } from 'react-notifications';
 
 const API_URL = 'https://654f6668358230d8f0cd4625.mockapi.io/adverts';
 
@@ -60,7 +61,7 @@ const carsSlice = createSlice({
         state.cars = [...state.cars, ...action.payload];
         state.currentPage += 1;
         if (action.payload.length === 0) {
-          alert('No more cards available!');
+          NotificationManager.warning('No more cars left');
         }
       })
       .addCase(fetchCars.rejected, (state, action) => {
