@@ -1,47 +1,28 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { CatalogList, CatalogWrapper } from './Catalog.styled';
 import { Filters } from 'components/Filters/Filters';
 import { CarCard } from 'components/CarCard/CarCard';
 import { CarModal } from 'components/CarModal/CarModal';
-
-const getAllCars = async () => {
-  try {
-    const response = await axios.get(
-      'https://654f6668358230d8f0cd4625.mockapi.io/adverts'
-    );
-    const allCars = response.data;
-    return allCars;
-  } catch (error) {
-    console.error('Error fetching cars:', error);
-  }
-};
+import { fetchCars } from 'redux/cars/carsSlice';
+import { openModal } from 'redux/modal/modalSlice';
 
 const Catalog = () => {
-  const [cars, setCars] = useState([]);
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  const [modalData, setModalData] = useState(null);
+  const dispatch = useDispatch();
+  const cars = useSelector(state => state.carsStore.cars);
+  const isOpenModal = useSelector(state => state.modal.isOpenModal);
+  const modalData = useSelector(state => state.modal.modalData);
 
-  //////ВІДКРИТТЯ МОДАЛКИ//////
-  const openModal = someDataToModal => {
-    setIsOpenModal(true);
-    setModalData(someDataToModal);
-  };
-
-  //////ЗАКРИТТЯ МОДАЛКИ//////
-  const closeModal = () => {
-    setIsOpenModal(false);
-    setModalData(null);
-  };
-
+  ////fetchCars при монтажі компонента////
   useEffect(() => {
-    const fetchData = async () => {
-      const carsData = await getAllCars();
-      setCars(carsData);
-    };
+    dispatch(fetchCars());
+  }, [dispatch]);
 
-    fetchData();
-  }, []);
+  ////Відкриваємо модалку з даними про автомобіль////
+  const openCarModal = car => {
+    dispatch(openModal(car));
+  };
 
   return (
     <>
@@ -68,13 +49,11 @@ const Catalog = () => {
               description={car.description}
               accessories={car.accessories}
               rentalConditions={car.rentalConditions}
-              openModal={openModal}
+              openModal={openCarModal}
             />
           ))}
         </CatalogList>
-        {isOpenModal && (
-          <CarModal modalData={modalData} closeModal={closeModal}></CarModal>
-        )}
+        {isOpenModal && <CarModal modalData={modalData} />}
       </CatalogWrapper>
     </>
   );

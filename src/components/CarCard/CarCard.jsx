@@ -33,7 +33,7 @@ export const CarCard = ({
   accessories,
   rentalConditions,
 }) => {
-  // Перетворив адресу на масив та розділив елементи комою з пробілом
+  // // Перетворив адресу на масив та розділив елементи комою з пробілом
   const addressParts = address.split(', ');
   const city = addressParts[1];
   const country = addressParts[2];

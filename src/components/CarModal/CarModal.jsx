@@ -22,12 +22,15 @@ import {
 } from './CardModal.styled';
 import { ReactComponent as IconCross } from 'assets/icons/crossSvg.svg';
 import { CarModel } from 'components/CarCard/CarCard.styled';
+import { closeModal } from 'redux/modal/modalSlice';
+import { useDispatch } from 'react-redux';
 
-export const CarModal = ({ modalData, closeModal }) => {
+export const CarModal = ({ modalData }) => {
+  const dispatch = useDispatch();
   useEffect(() => {
     const handleKeyDown = evt => {
       if (evt.code === 'Escape') {
-        closeModal();
+        dispatch(closeModal());
       }
     };
 
@@ -39,11 +42,11 @@ export const CarModal = ({ modalData, closeModal }) => {
       window.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'auto';
     };
-  }, [closeModal]);
+  }, [dispatch]);
 
   const handleOverlayClick = evt => {
     if (evt.target === evt.currentTarget) {
-      closeModal();
+      dispatch(closeModal());
     }
   };
 
@@ -83,7 +86,7 @@ export const CarModal = ({ modalData, closeModal }) => {
   return (
     <CarModalWrapper onClick={handleOverlayClick}>
       <ModalStyled>
-        <CloseButton onClick={closeModal} type="button">
+        <CloseButton onClick={() => dispatch(closeModal())} type="button">
           <IconCross />
         </CloseButton>
         {img && <CarModalImg src={img} alt="car" />}
