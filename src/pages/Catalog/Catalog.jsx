@@ -8,7 +8,7 @@ import { CarModal } from 'components/CarModal/CarModal';
 const getAllCars = async () => {
   try {
     const response = await axios.get(
-      'https://654f6668358230d8f0cd4625.mockapi.io/contacts/adverts'
+      'https://654f6668358230d8f0cd4625.mockapi.io/adverts'
     );
     const allCars = response.data;
     return allCars;
