@@ -149,7 +149,7 @@ export const CarModal = ({ modalData }) => {
             </RentalCondLi>
           </RentalCondList>
         </RentalCondWrapper>
-        <ModalBtn type="button">Rental car</ModalBtn>
+        <ModalBtn href={`tel:+380730000000`}>Rental car</ModalBtn>
       </ModalStyled>
     </CarModalWrapper>
   );

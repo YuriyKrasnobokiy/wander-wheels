@@ -1,27 +1,31 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { CatalogList, CatalogWrapper } from './Catalog.styled';
+import { CatalogList, CatalogWrapper, LoadMoreBtn } from './Catalog.styled';
 import { Filters } from 'components/Filters/Filters';
 import { CarCard } from 'components/CarCard/CarCard';
 import { CarModal } from 'components/CarModal/CarModal';
-import { fetchCars } from 'redux/cars/carsSlice';
+import { fetchCars, fetchMoreCars } from 'redux/cars/carsSlice';
 import { openModal } from 'redux/modal/modalSlice';
+// import { setCurrentPage } from 'redux/cars/carsSlice';
 
 const Catalog = () => {
   const dispatch = useDispatch();
   const cars = useSelector(state => state.carsStore.cars);
+  const currentPage = useSelector(state => state.carsStore.currentPage);
   const isOpenModal = useSelector(state => state.modal.isOpenModal);
   const modalData = useSelector(state => state.modal.modalData);
 
-  ////fetchCars при монтажі компонента////
   useEffect(() => {
     dispatch(fetchCars());
   }, [dispatch]);
 
-  ////Відкриваємо модалку з даними про автомобіль////
   const openCarModal = car => {
     dispatch(openModal(car));
+  };
+
+  const loadMoreCars = () => {
+    dispatch(fetchMoreCars(currentPage + 1));
   };
 
   return (
@@ -53,6 +57,10 @@ const Catalog = () => {
             />
           ))}
         </CatalogList>
+
+        <LoadMoreBtn type="button" onClick={loadMoreCars}>
+          Load more
+        </LoadMoreBtn>
         {isOpenModal && <CarModal modalData={modalData} />}
       </CatalogWrapper>
     </>

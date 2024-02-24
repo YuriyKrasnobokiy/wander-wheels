@@ -15,6 +15,12 @@ export const FavoriteBtn = styled.button`
   color: ${props => props.theme.colors.favoriteIconStroke};
   top: 16px;
   right: 16px;
+
+  transition: color 300ms linear;
+
+  &:hover {
+    color: ${props => props.theme.colors.secondAccentColor};
+  }
 `;
 
 export const CarImg = styled.img`
@@ -53,6 +59,8 @@ export const CarTagsList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 28px;
+  height: 40px;
+  overflow: hidden;
 `;
 
 export const CarTag = styled.li`

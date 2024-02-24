@@ -31,6 +31,7 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  padding: 0;
 }
 
 img {
@@ -41,4 +42,10 @@ img {
 
 li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
 }

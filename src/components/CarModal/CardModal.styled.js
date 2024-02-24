@@ -164,17 +164,19 @@ export const RentalCondLi = styled.li`
   max-width: 175px;
 `;
 
-export const ModalBtn = styled.button`
-  display: block;
+export const ModalBtn = styled.a`
+  display: inline-block;
   border-radius: 12px;
-  padding: 12px 50px;
+  padding: 12px;
   font-weight: 600;
   font-size: 14px;
   line-height: 1.43;
+  min-width: 168px;
   color: ${props => props.theme.colors.buttonTextColor};
   background-color: ${props => props.theme.colors.buttonBgColor};
   transition: background-color 300ms linear;
   margin: 0;
+  text-align: center;
 
   &:hover {
     background-color: ${props => props.theme.colors.accentColor};

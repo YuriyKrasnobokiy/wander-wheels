@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import Layout from './Layout/Layout';
 import { Loader } from './Loader/Loader';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Home from 'pages/Home/Home';
 import Catalog from 'pages/Catalog/Catalog';
 import Favorites from 'pages/Favorites/Favorites';
@@ -32,6 +32,7 @@ export const App = () => {
           <Route path="/" element={<Home />}></Route>
           <Route path="/catalog" element={<Catalog />}></Route>
           <Route path="/favorites" element={<Favorites />}></Route>
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Suspense>
     </Layout>
