@@ -9,6 +9,7 @@ import { fetchCars, fetchMoreCars } from 'redux/cars/carsSlice';
 import { openModal } from 'redux/modal/modalSlice';
 import 'react-notifications/lib/notifications.css';
 import { NotificationContainer } from 'react-notifications';
+// import { Loader } from 'components/Loader/Loader';
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -65,6 +66,7 @@ const Catalog = () => {
         {isOpenModal && <CarModal modalData={modalData} />}
         <NotificationContainer />
       </CatalogWrapper>
+      )
     </>
   );
 };

@@ -1,10 +1,11 @@
-import { Suspense } from 'react';
+import { Suspense, lazy } from 'react';
 import Layout from './Layout/Layout';
 import { Loader } from './Loader/Loader';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Home from 'pages/Home/Home';
-import Catalog from 'pages/Catalog/Catalog';
-import Favorites from 'pages/Favorites/Favorites';
+
+const Home = lazy(() => import('pages/Home/Home'));
+const Catalog = lazy(() => import('pages/Catalog/Catalog'));
+const Favorites = lazy(() => import('pages/Favorites/Favorites'));
 
 export const theme = {
   colors: {

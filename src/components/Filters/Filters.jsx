@@ -6,6 +6,9 @@ import {
   SelectLabel,
   SelectWrapper,
 } from './Filters.styled';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { useSearchParams } from 'react-router-dom';
+// import { setFilter } from 'redux/cars/carsSlice';
 
 const filterOptions = [
   'Buick',
@@ -33,14 +36,23 @@ const filterOptions = [
 ];
 
 export const Filters = () => {
+  // const [searchParams] = useSearchParams();
+  // const dispatch = useDispatch();
+  // const initialFilter = useSelector(selectFilter);
+  // const handleChange = evt => {
+  //   dispatch(setFilter(evt.target.value));
+  // };
+
   return (
     <FiltersWrapper>
       <SelectWrapper>
-        <SelectLabel htmlFor="car_filter">Car brand</SelectLabel>
+        <SelectLabel htmlFor="make_filter">Car brand</SelectLabel>
         <FilterSelect
           placeholder="Enter the text"
-          name="carNameFilter"
-          id="car_filter"
+          name="carMakeFilter"
+          id="make_filter"
+          // value={initialFilter}
+          // onChange={handleChange}
         >
           {filterOptions.map((item, idx) => (
             <option key={idx}>{item}</option>

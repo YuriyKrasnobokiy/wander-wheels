@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   CarCardBtn,
   CarCardWrapper,
@@ -12,6 +12,9 @@ import {
   FavoriteBtn,
 } from './CarCard.styled';
 import { ReactComponent as IconFavorite } from 'assets/icons/favoriteSvg.svg';
+import { ReactComponent as IconFavorite2 } from 'assets/icons/favorite2Svg.svg';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { addToFavorites, removeFromFavorites } from 'redux/cars/carsSlice';
 
 export const CarCard = ({
   id,
@@ -38,10 +41,45 @@ export const CarCard = ({
   const city = addressParts[1];
   const country = addressParts[2];
 
+  // const dispatch = useDispatch();
+  // const favoriteCars = useSelector(selectFavoriteCars);
+  const [isFavorite, setIsFavorite] = useState();
+  // favoriteCars.some(car => car.id === id)
+
+  const toggleFavorite = () => {
+    // const carData = {
+    //   id,
+    //   img,
+    //   engineSize,
+    //   photoLink,
+    //   make,
+    //   model,
+    //   type,
+    //   year,
+    //   rentalPrice,
+    //   address,
+    //   rentalCompany,
+    //   mileage,
+    //   functionalities,
+    //   openModal,
+    //   fuelConsumption,
+    //   description,
+    //   accessories,
+    //   rentalConditions,
+    // };
+
+    // if (isFavorite) {
+    //   dispatch(removeFromFavorites(carData));
+    // } else {
+    //   dispatch(addToFavorites(carData));
+    // }
+    setIsFavorite(!isFavorite);
+  };
+
   return (
     <CarCardWrapper>
-      <FavoriteBtn>
-        <IconFavorite />
+      <FavoriteBtn onClick={toggleFavorite}>
+        {isFavorite ? <IconFavorite2 /> : <IconFavorite />}
       </FavoriteBtn>
       {img && <CarImg src={img} alt="car" />}
       {photoLink && <CarImg src={photoLink} alt="car" />}

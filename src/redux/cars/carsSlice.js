@@ -33,13 +33,28 @@ const carsSlice = createSlice({
   name: 'cars',
   initialState: {
     cars: [],
+    favoriteCars: [],
     currentPage: 1,
     isLoading: false,
     error: null,
   },
   reducers: {
-    setCurrentPage: (state, action) => {
+    setCurrentPage(state, action) {
       state.currentPage = action.payload;
+    },
+    setFilter(state, action) {
+      state.filter = action.payload;
+    },
+    setFilterCars(state, action) {
+      state.filterCars = action.payload;
+    },
+    addToFavorites: (state, action) => {
+      state.favoriteCars.push(action.payload);
+    },
+    removeFromFavorites: (state, action) => {
+      state.favoriteCars = state.favoriteCars.filter(
+        car => car.id !== action.payload.id
+      );
     },
   },
   extraReducers: builder => {
@@ -75,5 +90,11 @@ const carsSlice = createSlice({
   },
 });
 
-export const { setCurrentPage } = carsSlice.actions;
+export const {
+  setCurrentPage,
+  setFilter,
+  setFilterCars,
+  addToFavorites,
+  removeFromFavorites,
+} = carsSlice.actions;
 export default carsSlice.reducer;
