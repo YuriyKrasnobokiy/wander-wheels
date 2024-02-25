@@ -10,15 +10,13 @@ short-term needs, such as city trips or brief travels
 
 ## Installation
 
-# Clone to your PC
+Clone to your PC
 
-# Install dependencies --- npm i
+Install dependencies --- npm i
 
-# Run with the command --- npm start
+Run with the command --- npm start
 
 ## Used technologies
 
 React, Redux Toolkit, Styled-Components, Mockapi, some libs for notification and
 loader.
-
-## Used technologies
