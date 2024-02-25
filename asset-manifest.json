@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/wander-wheels/static/css/main.ad6356be.css",
-    "main.js": "/wander-wheels/static/js/main.c65a1900.js",
+    "main.js": "/wander-wheels/static/js/main.0c16037f.js",
     "static/media/notification.svg?s3g3t9": "/wander-wheels/static/media/notification.5d0158671dd860c714c4.svg",
     "static/media/notification.eot": "/wander-wheels/static/media/notification.3657084dc0419605a91c.eot",
     "static/media/notification.woff?s3g3t9": "/wander-wheels/static/media/notification.c392cd33d9d9de730f9d.woff",
@@ -10,10 +10,10 @@
     "static/media/favoriteSvg.svg": "/wander-wheels/static/media/favoriteSvg.5efec6b49c7b5c068582885bd8d0b312.svg",
     "static/media/crossSvg.svg": "/wander-wheels/static/media/crossSvg.b87e87a3d21ad011d1d2d2a66fd1c0bc.svg",
     "main.ad6356be.css.map": "/wander-wheels/static/css/main.ad6356be.css.map",
-    "main.c65a1900.js.map": "/wander-wheels/static/js/main.c65a1900.js.map"
+    "main.0c16037f.js.map": "/wander-wheels/static/js/main.0c16037f.js.map"
   },
   "entrypoints": [
     "static/css/main.ad6356be.css",
-    "static/js/main.c65a1900.js"
+    "static/js/main.0c16037f.js"
   ]
 }
