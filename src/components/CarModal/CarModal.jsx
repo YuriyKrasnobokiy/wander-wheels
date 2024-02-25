@@ -69,17 +69,20 @@ export const CarModal = ({ modalData }) => {
     description,
   } = modalData;
 
-  // Перетворив адресу на масив та розділив елементи комою з пробілом
+  ////Перетворив адресу на масив та розділив елементи по комі з пробілом////
   const addressParts = address.split(', ');
   const city = addressParts[1];
   const country = addressParts[2];
 
+  ////Перетворив умови оренди на масив та розділив елементи по \n////
   const rentalConditionsParts = rentalConditions.split('\n');
 
+  ////Форматую пробіг, типу тисячи комою відділені////
   const formattedMileage = mileage
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
+  ////Форматую ціну, щоб знак долара був в кінці ////
   const formattedPrice = rentalPrice.slice(1, 3);
   const formattedPriceCurrency = `${formattedPrice}$`;
 

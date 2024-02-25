@@ -6,9 +6,9 @@ import {
   SelectLabel,
   SelectWrapper,
 } from './Filters.styled';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useSearchParams } from 'react-router-dom';
-// import { setFilter } from 'redux/cars/carsSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFilterWord } from 'redux/cars/carsSlice';
+import { selectFilterWord } from 'redux/cars/carsSelectors';
 
 const filterOptions = [
   'Buick',
@@ -22,26 +22,24 @@ const filterOptions = [
   'Hyundai',
   'MINI',
   'Bentley',
-  'Mercedes-Benz',
+  'Mercedes',
   'Aston Martin',
   'Pontiac',
   'Lamborghini',
   'Audi',
   'BMW',
   'Chevrolet',
-  'Mercedes-Benz',
   'Chrysler',
   'Kia',
   'Land',
 ];
 
 export const Filters = () => {
-  // const [searchParams] = useSearchParams();
-  // const dispatch = useDispatch();
-  // const initialFilter = useSelector(selectFilter);
-  // const handleChange = evt => {
-  //   dispatch(setFilter(evt.target.value));
-  // };
+  const filterWord = useSelector(selectFilterWord);
+  const dispatch = useDispatch();
+  const onChange = evt => {
+    dispatch(setFilterWord(evt.target.value));
+  };
 
   return (
     <FiltersWrapper>
@@ -51,8 +49,8 @@ export const Filters = () => {
           placeholder="Enter the text"
           name="carMakeFilter"
           id="make_filter"
-          // value={initialFilter}
-          // onChange={handleChange}
+          value={filterWord}
+          onChange={onChange}
         >
           {filterOptions.map((item, idx) => (
             <option key={idx}>{item}</option>

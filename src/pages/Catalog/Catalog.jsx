@@ -9,14 +9,20 @@ import { fetchCars, fetchMoreCars } from 'redux/cars/carsSlice';
 import { openModal } from 'redux/modal/modalSlice';
 import 'react-notifications/lib/notifications.css';
 import { NotificationContainer } from 'react-notifications';
-// import { Loader } from 'components/Loader/Loader';
+import {
+  selectCars,
+  selectCurrentPage,
+  selectFilterWord,
+} from 'redux/cars/carsSelectors';
+import { selectIsOpenModal, selectModalData } from 'redux/modal/modalSelectors';
 
 const Catalog = () => {
   const dispatch = useDispatch();
-  const cars = useSelector(state => state.carsStore.cars);
-  const currentPage = useSelector(state => state.carsStore.currentPage);
-  const isOpenModal = useSelector(state => state.modal.isOpenModal);
-  const modalData = useSelector(state => state.modal.modalData);
+  const cars = useSelector(selectCars);
+  const currentPage = useSelector(selectCurrentPage);
+  const isOpenModal = useSelector(selectIsOpenModal);
+  const modalData = useSelector(selectModalData);
+  const filterWord = useSelector(selectFilterWord);
 
   useEffect(() => {
     dispatch(fetchCars());
@@ -30,12 +36,16 @@ const Catalog = () => {
     dispatch(fetchMoreCars(currentPage + 1));
   };
 
+  const filteredCarCards = cars.filter(car =>
+    car.make.toLowerCase().includes(filterWord.toLowerCase())
+  );
+
   return (
     <>
       <CatalogWrapper>
         <Filters />
         <CatalogList>
-          {cars.map(car => (
+          {filteredCarCards.map(car => (
             <CarCard
               key={car.id}
               id={car.id}
@@ -63,10 +73,10 @@ const Catalog = () => {
         <LoadMoreBtn type="button" onClick={loadMoreCars}>
           Load more
         </LoadMoreBtn>
+
         {isOpenModal && <CarModal modalData={modalData} />}
         <NotificationContainer />
       </CatalogWrapper>
-      )
     </>
   );
 };
