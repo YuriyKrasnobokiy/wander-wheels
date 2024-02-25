@@ -31,8 +31,8 @@ const Catalog = () => {
 
   return (
     <>
-      <Filters />
       <CatalogWrapper>
+        <Filters />
         <CatalogList>
           {cars.map(car => (
             <CarCard

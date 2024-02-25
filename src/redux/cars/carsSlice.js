@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { NotificationManager } from 'react-notifications';
 
-const API_URL = 'https://654f6668358230d8f0cd4625.mockapi.io/adverts';
+export const API_URL = 'https://654f6668358230d8f0cd4625.mockapi.io/adverts';
 
 export const fetchCars = createAsyncThunk('cars/fetchCars', async () => {
   try {

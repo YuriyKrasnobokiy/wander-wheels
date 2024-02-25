@@ -16,7 +16,7 @@ export const theme = {
     buttonTextColor: '#fff',
     heartIconStrokeColor: '#858688',
     filterLabelColor: '#8a8a89',
-    filterInputBackground: '#f7f7fb',
+    filterSelectBackground: '#f7f7fb',
     favoriteIconStroke: 'rgba(255, 255, 255, 0.8)',
     modarOverlayColor: 'rgba(18, 20, 23, 0.5)',
     modalBgColor: '#fff',
