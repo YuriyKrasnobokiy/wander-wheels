@@ -13,6 +13,8 @@ import {
 } from './CarCard.styled';
 import { ReactComponent as IconFavorite } from 'assets/icons/favoriteSvg.svg';
 import { ReactComponent as IconFavorite2 } from 'assets/icons/favorite2Svg.svg';
+import { useDispatch } from 'react-redux';
+import { addToFavorites, removeFromFavorites } from 'redux/cars/carsSlice';
 
 export const CarCard = ({
   id,
@@ -39,9 +41,15 @@ export const CarCard = ({
   const city = addressParts[1];
   const country = addressParts[2];
   const [isFavorite, setIsFavorite] = useState(false);
+  const dispatch = useDispatch();
 
-  const toggleFavorite = () => {
+  const toggleFavorite = car => {
     setIsFavorite(!isFavorite);
+    if (!isFavorite) {
+      dispatch(addToFavorites(car.id));
+    } else {
+      dispatch(removeFromFavorites(car.id));
+    }
   };
 
   return (

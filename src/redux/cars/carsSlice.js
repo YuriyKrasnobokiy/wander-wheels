@@ -46,6 +46,16 @@ const carsSlice = createSlice({
     setFilterWord(state, { payload }) {
       state.filterWord = payload;
     },
+    addToFavorites: (state, action) => {
+      const carId = action.payload;
+      if (!state.favoriteCars.includes(carId)) {
+        state.favoriteCars.push(carId);
+      }
+    },
+    removeFromFavorites: (state, action) => {
+      const carId = action.payload;
+      state.favoriteCars = state.favoriteCars.filter(id => id !== carId);
+    },
   },
   extraReducers: builder => {
     builder
@@ -80,6 +90,11 @@ const carsSlice = createSlice({
   },
 });
 
-export const { setCurrentPage, setFilterWord } = carsSlice.actions;
+export const {
+  setCurrentPage,
+  setFilterWord,
+  addToFavorites,
+  removeFromFavorites,
+} = carsSlice.actions;
 
 export default carsSlice.reducer;
