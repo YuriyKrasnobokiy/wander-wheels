@@ -1,19 +1,30 @@
 {
   "files": {
-    "main.css": "/wander-wheels/static/css/main.ad6356be.css",
-    "main.js": "/wander-wheels/static/js/main.0c16037f.js",
+    "main.css": "/wander-wheels/static/css/main.44940a2e.css",
+    "main.js": "/wander-wheels/static/js/main.8332154d.js",
+    "static/js/304.b0aef0e6.chunk.js": "/wander-wheels/static/js/304.b0aef0e6.chunk.js",
+    "static/css/503.02b6d54b.chunk.css": "/wander-wheels/static/css/503.02b6d54b.chunk.css",
+    "static/js/503.98c6b79b.chunk.js": "/wander-wheels/static/js/503.98c6b79b.chunk.js",
+    "static/js/733.938570e0.chunk.js": "/wander-wheels/static/js/733.938570e0.chunk.js",
+    "static/js/118.8bf3e2b0.chunk.js": "/wander-wheels/static/js/118.8bf3e2b0.chunk.js",
     "static/media/notification.svg?s3g3t9": "/wander-wheels/static/media/notification.5d0158671dd860c714c4.svg",
     "static/media/notification.eot": "/wander-wheels/static/media/notification.3657084dc0419605a91c.eot",
     "static/media/notification.woff?s3g3t9": "/wander-wheels/static/media/notification.c392cd33d9d9de730f9d.woff",
     "static/media/notification.ttf?s3g3t9": "/wander-wheels/static/media/notification.c5d9251ea82e42f75381.ttf",
     "index.html": "/wander-wheels/index.html",
     "static/media/favoriteSvg.svg": "/wander-wheels/static/media/favoriteSvg.5efec6b49c7b5c068582885bd8d0b312.svg",
+    "static/media/favorite2Svg.svg": "/wander-wheels/static/media/favorite2Svg.97d43db03464980fffc917b39d633d7d.svg",
     "static/media/crossSvg.svg": "/wander-wheels/static/media/crossSvg.b87e87a3d21ad011d1d2d2a66fd1c0bc.svg",
-    "main.ad6356be.css.map": "/wander-wheels/static/css/main.ad6356be.css.map",
-    "main.0c16037f.js.map": "/wander-wheels/static/js/main.0c16037f.js.map"
+    "main.44940a2e.css.map": "/wander-wheels/static/css/main.44940a2e.css.map",
+    "main.8332154d.js.map": "/wander-wheels/static/js/main.8332154d.js.map",
+    "304.b0aef0e6.chunk.js.map": "/wander-wheels/static/js/304.b0aef0e6.chunk.js.map",
+    "503.02b6d54b.chunk.css.map": "/wander-wheels/static/css/503.02b6d54b.chunk.css.map",
+    "503.98c6b79b.chunk.js.map": "/wander-wheels/static/js/503.98c6b79b.chunk.js.map",
+    "733.938570e0.chunk.js.map": "/wander-wheels/static/js/733.938570e0.chunk.js.map",
+    "118.8bf3e2b0.chunk.js.map": "/wander-wheels/static/js/118.8bf3e2b0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad6356be.css",
-    "static/js/main.0c16037f.js"
+    "static/css/main.44940a2e.css",
+    "static/js/main.8332154d.js"
   ]
 }
