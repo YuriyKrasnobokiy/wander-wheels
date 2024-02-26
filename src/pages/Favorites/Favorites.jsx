@@ -11,6 +11,7 @@ import { openModal } from 'redux/modal/modalSlice';
 const Favorites = () => {
   const dispatch = useDispatch();
   const favoriteCars = useSelector(selectfavoriteCars);
+  console.log('favoriteCars: ', favoriteCars);
   const isOpenModal = useSelector(state => state.modal.isOpenModal);
   const modalData = useSelector(state => state.modal.modalData);
 
@@ -26,31 +27,30 @@ const Favorites = () => {
     <>
       <CatalogWrapper>
         <CatalogList>
-          {favoriteCars.map(car =>
-            car && car.id ? (
-              <CarCard
-                key={car.id}
-                id={car.id}
-                img={car.img}
-                photoLink={car.photoLink}
-                make={car.make}
-                model={car.model}
-                year={car.year}
-                rentalPrice={car.rentalPrice}
-                type={car.type}
-                mileage={car.mileage}
-                address={car.address}
-                functionalities={car.functionalities}
-                rentalCompany={car.rentalCompany}
-                fuelConsumption={car.fuelConsumption}
-                engineSize={car.engineSize}
-                description={car.description}
-                accessories={car.accessories}
-                rentalConditions={car.rentalConditions}
-                openModal={openCarModal}
-              />
-            ) : null
-          )}
+          {favoriteCars.map(car => (
+            <CarCard
+              key={car.id}
+              // id={car.id}
+              // img={car.img}
+              // photoLink={car.photoLink}
+              // make={car.make}
+              // model={car.model}
+              // year={car.year}
+              // rentalPrice={car.rentalPrice}
+              // type={car.type}
+              // mileage={car.mileage}
+              // address={car.address}
+              // functionalities={car.functionalities}
+              // rentalCompany={car.rentalCompany}
+              // fuelConsumption={car.fuelConsumption}
+              // engineSize={car.engineSize}
+              // description={car.description}
+              // accessories={car.accessories}
+              // rentalConditions={car.rentalConditions}
+              openModal={openCarModal}
+              car={car}
+            />
+          ))}
         </CatalogList>
 
         {isOpenModal && <CarModal modalData={modalData} />}

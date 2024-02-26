@@ -46,14 +46,13 @@ const carsSlice = createSlice({
     setFilterWord(state, { payload }) {
       state.filterWord = payload;
     },
-    addToFavorites: (state, action) => {
-      const carId = action.payload;
-      if (!state.favoriteCars.includes(carId)) {
-        state.favoriteCars.push(carId);
-      }
+    addToFavorites(state, action) {
+      const car = action.payload;
+      state.favoriteCars.push(car);
     },
+
     removeFromFavorites: (state, action) => {
-      const carId = action.payload;
+      const carId = action.payload.id;
       state.favoriteCars = state.favoriteCars.filter(id => id !== carId);
     },
   },

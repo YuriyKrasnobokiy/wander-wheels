@@ -15,27 +15,29 @@ import { ReactComponent as IconFavorite } from 'assets/icons/favoriteSvg.svg';
 import { ReactComponent as IconFavorite2 } from 'assets/icons/favorite2Svg.svg';
 import { useDispatch } from 'react-redux';
 import { addToFavorites, removeFromFavorites } from 'redux/cars/carsSlice';
+// import { selectCars } from 'redux/cars/carsSelectors';
 
-export const CarCard = ({
-  id,
-  img,
-  engineSize,
-  photoLink,
-  make,
-  model,
-  type,
-  year,
-  rentalPrice,
-  address,
-  rentalCompany,
-  mileage,
-  functionalities,
-  openModal,
-  fuelConsumption,
-  description,
-  accessories,
-  rentalConditions,
-}) => {
+export const CarCard = ({ car, openModal }) => {
+  const {
+    id,
+    img,
+    engineSize,
+    photoLink,
+    make,
+    model,
+    type,
+    year,
+    rentalPrice,
+    address,
+    rentalCompany,
+    mileage,
+    functionalities,
+
+    fuelConsumption,
+    description,
+    accessories,
+    rentalConditions,
+  } = car;
   //// Перетворив адресу на масив та розділив елементи комою з пробілом////
   const addressParts = address.split(', ');
   const city = addressParts[1];
@@ -44,17 +46,18 @@ export const CarCard = ({
   const dispatch = useDispatch();
 
   const toggleFavorite = car => {
+    console.log('car: ', car);
     setIsFavorite(!isFavorite);
     if (!isFavorite) {
-      dispatch(addToFavorites(car.id));
+      dispatch(addToFavorites(car));
     } else {
-      dispatch(removeFromFavorites(car.id));
+      dispatch(removeFromFavorites(car));
     }
   };
 
   return (
     <CarCardWrapper>
-      <FavoriteBtn onClick={toggleFavorite}>
+      <FavoriteBtn onClick={() => toggleFavorite(car)}>
         {isFavorite ? <IconFavorite2 /> : <IconFavorite />}
       </FavoriteBtn>
       {img && <CarImg src={img} alt="car" />}
