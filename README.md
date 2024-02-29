@@ -28,7 +28,8 @@ short-term needs, such as city trips or brief travels
 
 ## Installation
 
-- Clone this repository using the command<br> _git clone_
+- Clone this repository using the command<br> _git clone
+  https://github.com/YuriyKrasnobokiy/wander-wheels.git_
 
 - Install dependencies using the command<br> _npm i_
 
