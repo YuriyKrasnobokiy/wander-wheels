@@ -8,15 +8,28 @@ provide details about rental conditions and offer online payment options. Such a
 service offers a convenient and flexible way to use transportation for
 short-term needs, such as city trips or brief travels
 
-## Installation
-
-Clone to your PC
-
-Install dependencies --- npm i
-
-Run with the command --- npm start
-
 ## Used technologies
 
-React, Redux Toolkit, Styled-Components, Mockapi, some libs for notification and
-loader.
+- React
+- React Dom
+- Redux Toolkit
+- Redux Persist
+- Axios
+- Mockapi
+- React Select
+- Styled Components
+- React Notifications
+
+## Functionality
+
+- Displaying a list of available rental cars
+- Filtering cars based on some criteria
+- Ability to mark a car as favorite and add it to the 'favorites' list
+
+## Installation
+
+- Clone this repository using the command _git clone_
+- Install dependencies using the command _npm i_
+- Start this project using the command _npm start_
+- If the browser did not launch automatically, paste this into the address bar:
+  _http://localhost:3000/wander-wheels_
