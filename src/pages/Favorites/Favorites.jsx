@@ -1,5 +1,6 @@
 import { CarCard } from 'components/CarCard/CarCard';
 import { CarModal } from 'components/CarModal/CarModal';
+import { FavoriteClean } from 'components/FavoriteClean/FavoriteClean';
 import { CatalogList, CatalogWrapper } from 'pages/Catalog/Catalog.styled';
 import React, { useEffect } from 'react';
 import { NotificationContainer } from 'react-notifications';
@@ -26,32 +27,15 @@ const Favorites = () => {
   return (
     <>
       <CatalogWrapper>
-        <CatalogList>
-          {favoriteCars.map(car => (
-            <CarCard
-              key={car.id}
-              // id={car.id}
-              // img={car.img}
-              // photoLink={car.photoLink}
-              // make={car.make}
-              // model={car.model}
-              // year={car.year}
-              // rentalPrice={car.rentalPrice}
-              // type={car.type}
-              // mileage={car.mileage}
-              // address={car.address}
-              // functionalities={car.functionalities}
-              // rentalCompany={car.rentalCompany}
-              // fuelConsumption={car.fuelConsumption}
-              // engineSize={car.engineSize}
-              // description={car.description}
-              // accessories={car.accessories}
-              // rentalConditions={car.rentalConditions}
-              openModal={openCarModal}
-              car={car}
-            />
-          ))}
-        </CatalogList>
+        {favoriteCars.length > 0 ? (
+          <CatalogList>
+            {favoriteCars.map(car => (
+              <CarCard key={car.id} openModal={openCarModal} car={car} />
+            ))}
+          </CatalogList>
+        ) : (
+          <FavoriteClean />
+        )}
 
         {isOpenModal && <CarModal modalData={modalData} />}
         <NotificationContainer />
