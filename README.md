@@ -28,8 +28,11 @@ short-term needs, such as city trips or brief travels
 
 ## Installation
 
-- Clone this repository using the command _git clone_
-- Install dependencies using the command _npm i_
-- Start this project using the command _npm start_
-- If the browser did not launch automatically, paste this into the address bar:
-  _http://localhost:3000/wander-wheels_
+- Clone this repository using the command<br> _git clone_
+
+- Install dependencies using the command<br> _npm i_
+
+- Start this project using the command<br> _npm start_
+
+- If the browser did not launch automatically, paste this into the address
+  bar:<br> _http://localhost:3000/wander-wheels_
