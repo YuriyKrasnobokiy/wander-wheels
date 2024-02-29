@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CatalogWrapper = styled.div`
   max-width: 1184px;
-  padding: 0 8px;
+  padding: 0 8px 20px;
   margin: 0 auto;
 `;
 
@@ -22,7 +22,7 @@ export const LoadMoreBtn = styled.button`
   text-decoration-skip-ink: none;
   color: ${props => props.theme.colors.secondAccentColor};
   background-color: transparent;
-  margin-bottom: 150px;
+
   transition: color 300ms linear;
 
   &:hover {
