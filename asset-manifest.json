@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/wander-wheels/static/css/main.525035fa.css",
-    "main.js": "/wander-wheels/static/js/main.7b44999c.js",
+    "main.js": "/wander-wheels/static/js/main.e21cd9c7.js",
     "static/js/304.b0aef0e6.chunk.js": "/wander-wheels/static/js/304.b0aef0e6.chunk.js",
     "static/css/144.a8745609.chunk.css": "/wander-wheels/static/css/144.a8745609.chunk.css",
-    "static/js/144.aad75910.chunk.js": "/wander-wheels/static/js/144.aad75910.chunk.js",
-    "static/js/961.fe0c7903.chunk.js": "/wander-wheels/static/js/961.fe0c7903.chunk.js",
+    "static/js/144.24fa1120.chunk.js": "/wander-wheels/static/js/144.24fa1120.chunk.js",
+    "static/js/961.a3734bc3.chunk.js": "/wander-wheels/static/js/961.a3734bc3.chunk.js",
     "static/js/971.1f02a318.chunk.js": "/wander-wheels/static/js/971.1f02a318.chunk.js",
-    "static/js/977.7794c5b9.chunk.js": "/wander-wheels/static/js/977.7794c5b9.chunk.js",
+    "static/js/118.94cae613.chunk.js": "/wander-wheels/static/js/118.94cae613.chunk.js",
     "static/media/notification.svg?s3g3t9": "/wander-wheels/static/media/notification.5d0158671dd860c714c4.svg",
     "static/media/notification.eot": "/wander-wheels/static/media/notification.3657084dc0419605a91c.eot",
     "static/media/notification.woff?s3g3t9": "/wander-wheels/static/media/notification.c392cd33d9d9de730f9d.woff",
@@ -17,16 +17,16 @@
     "static/media/favorite2Svg.svg": "/wander-wheels/static/media/favorite2Svg.97d43db03464980fffc917b39d633d7d.svg",
     "static/media/crossSvg.svg": "/wander-wheels/static/media/crossSvg.b87e87a3d21ad011d1d2d2a66fd1c0bc.svg",
     "main.525035fa.css.map": "/wander-wheels/static/css/main.525035fa.css.map",
-    "main.7b44999c.js.map": "/wander-wheels/static/js/main.7b44999c.js.map",
+    "main.e21cd9c7.js.map": "/wander-wheels/static/js/main.e21cd9c7.js.map",
     "304.b0aef0e6.chunk.js.map": "/wander-wheels/static/js/304.b0aef0e6.chunk.js.map",
     "144.a8745609.chunk.css.map": "/wander-wheels/static/css/144.a8745609.chunk.css.map",
-    "144.aad75910.chunk.js.map": "/wander-wheels/static/js/144.aad75910.chunk.js.map",
-    "961.fe0c7903.chunk.js.map": "/wander-wheels/static/js/961.fe0c7903.chunk.js.map",
+    "144.24fa1120.chunk.js.map": "/wander-wheels/static/js/144.24fa1120.chunk.js.map",
+    "961.a3734bc3.chunk.js.map": "/wander-wheels/static/js/961.a3734bc3.chunk.js.map",
     "971.1f02a318.chunk.js.map": "/wander-wheels/static/js/971.1f02a318.chunk.js.map",
-    "977.7794c5b9.chunk.js.map": "/wander-wheels/static/js/977.7794c5b9.chunk.js.map"
+    "118.94cae613.chunk.js.map": "/wander-wheels/static/js/118.94cae613.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.525035fa.css",
-    "static/js/main.7b44999c.js"
+    "static/js/main.e21cd9c7.js"
   ]
 }
