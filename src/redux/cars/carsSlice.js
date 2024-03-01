@@ -43,9 +43,11 @@ const carsSlice = createSlice({
     setCurrentPage(state, action) {
       state.currentPage = action.payload;
     },
+
     setFilterWord(state, { payload }) {
       state.filterWord = payload;
     },
+
     addToFavorites(state, action) {
       const car = action.payload;
       state.favoriteCars.push(car);

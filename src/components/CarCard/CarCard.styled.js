@@ -70,11 +70,9 @@ export const CarTag = styled.li`
   color: ${props => props.theme.colors.secondTextColor};
   border-right: 1px solid;
   border-color: ${props => props.theme.colors.secondTextColor};
-  padding: 0 6px;
-
-  &:first-child {
-    padding-left: 0;
-  }
+  padding-right: 6px;
+  padding-bottom: 4px;
+  margin-right: 6px;
 
   &:last-child {
     border: none;

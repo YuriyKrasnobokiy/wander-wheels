@@ -18,6 +18,8 @@ export const theme = {
     heartIconStrokeColor: '#858688',
     filterLabelColor: '#8a8a89',
     filterSelectBackground: '#f7f7fb',
+    filterOptionColor: 'rgba(18, 20, 23, 0.2)',
+    filterOptionColorHover: '#121417',
     favoriteIconStroke: 'rgba(255, 255, 255, 0.8)',
     modarOverlayColor: 'rgba(18, 20, 23, 0.5)',
     modalBgColor: '#fff',
