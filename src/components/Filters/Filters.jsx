@@ -38,7 +38,6 @@ const filterOptions = [
 const customStyles = {
   control: provided => ({
     ...provided,
-    border: 'none',
     backgroundColor: '#f7f7fb',
     borderRadius: '14px',
     padding: '6px',

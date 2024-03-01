@@ -50,9 +50,13 @@ const Catalog = () => {
           ))}
         </CatalogList>
 
-        <LoadMoreBtn type="button" onClick={loadMoreCars}>
-          Load more
-        </LoadMoreBtn>
+        {filteredCarCards.length % 12 !== 0 ||
+        !cars.length ||
+        cars.length % 12 !== 0 ? null : (
+          <LoadMoreBtn type="button" onClick={loadMoreCars}>
+            Load more
+          </LoadMoreBtn>
+        )}
 
         {isOpenModal && <CarModal modalData={modalData} />}
         <NotificationContainer />

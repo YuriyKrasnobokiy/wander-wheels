@@ -12,7 +12,6 @@ import { openModal } from 'redux/modal/modalSlice';
 const Favorites = () => {
   const dispatch = useDispatch();
   const favoriteCars = useSelector(selectfavoriteCars);
-  console.log('favoriteCars: ', favoriteCars);
   const isOpenModal = useSelector(state => state.modal.isOpenModal);
   const modalData = useSelector(state => state.modal.modalData);
 

@@ -13,9 +13,9 @@ import {
 } from 'redux-persist';
 
 const carsConfig = {
-  key: 'cars',
+  key: 'root',
   storage,
-  whitelist: ['cars'],
+  whitelist: ['favoriteCars', 'selectedCarIds'],
 };
 
 export const store = configureStore({

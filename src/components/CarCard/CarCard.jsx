@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   CarCardBtn,
   CarCardWrapper,
@@ -13,8 +13,17 @@ import {
 } from './CarCard.styled';
 import { ReactComponent as IconFavorite } from 'assets/icons/favoriteSvg.svg';
 import { ReactComponent as IconFavorite2 } from 'assets/icons/favorite2Svg.svg';
-import { useDispatch } from 'react-redux';
-import { addToFavorites, removeFromFavorites } from 'redux/cars/carsSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  addToFavorites,
+  removeFromFavorites,
+  toggleSelectedCar,
+} from 'redux/cars/carsSlice';
+import {
+  selectToggleSelectedCar,
+  // selectfavoriteCars,
+} from 'redux/cars/carsSelectors';
+// import { NotificationManager } from 'react-notifications';
 // import { selectCars } from 'redux/cars/carsSelectors';
 
 export const CarCard = ({ car, openModal }) => {
@@ -42,17 +51,19 @@ export const CarCard = ({ car, openModal }) => {
   const addressParts = address.split(', ');
   const city = addressParts[1];
   const country = addressParts[2];
-  const [isFavorite, setIsFavorite] = useState(false);
+  // const [isFavorite, setIsFavorite] = useState(false);
   const dispatch = useDispatch();
+  // const favoriteCars = useSelector(selectfavoriteCars);
+  const selectedCarIds = useSelector(selectToggleSelectedCar);
+  const isFavorite = selectedCarIds.includes(id);
 
   const toggleFavorite = car => {
-    console.log('car: ', car);
-    setIsFavorite(!isFavorite);
-    if (!isFavorite) {
-      dispatch(addToFavorites(car));
-    } else {
+    if (isFavorite) {
       dispatch(removeFromFavorites(car));
+    } else {
+      dispatch(addToFavorites(car));
     }
+    dispatch(toggleSelectedCar(car.id));
   };
 
   return (

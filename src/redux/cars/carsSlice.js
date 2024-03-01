@@ -21,6 +21,7 @@ export const fetchMoreCars = createAsyncThunk(
       const response = await axios.get(
         `${API_URL}?page=${currentPage}&limit=12`
       );
+
       return response.data;
     } catch (error) {
       console.error('Error fetching cars:', error);
@@ -38,6 +39,7 @@ const carsSlice = createSlice({
     isLoading: false,
     error: null,
     filterWord: '',
+    selectedCarIds: [],
   },
   reducers: {
     setCurrentPage(state, action) {
@@ -53,11 +55,23 @@ const carsSlice = createSlice({
       state.favoriteCars.push(car);
     },
 
-    removeFromFavorites: (state, action) => {
-      const carId = action.payload.id;
-      state.favoriteCars = state.favoriteCars.filter(id => id !== carId);
+    removeFromFavorites(state, action) {
+      const carToRemove = action.payload;
+      state.favoriteCars = state.favoriteCars.filter(
+        car => car.id !== carToRemove.id
+      );
+    },
+
+    toggleSelectedCar(state, action) {
+      const carId = action.payload;
+      if (state.selectedCarIds.includes(carId)) {
+        state.selectedCarIds = state.selectedCarIds.filter(id => id !== carId);
+      } else {
+        state.selectedCarIds.push(carId);
+      }
     },
   },
+
   extraReducers: builder => {
     builder
       .addCase(fetchCars.pending, state => {
@@ -76,7 +90,7 @@ const carsSlice = createSlice({
         state.isLoading = false;
         state.cars = [...state.cars, ...action.payload];
         state.currentPage += 1;
-        if (action.payload.length === 0) {
+        if (action.payload.length % 12 !== 0) {
           NotificationManager.warning('No more cars left');
         }
       })
@@ -96,6 +110,7 @@ export const {
   setFilterWord,
   addToFavorites,
   removeFromFavorites,
+  toggleSelectedCar,
 } = carsSlice.actions;
 
 export default carsSlice.reducer;
