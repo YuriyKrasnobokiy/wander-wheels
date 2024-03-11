@@ -20,7 +20,9 @@ export const theme = {
     filterSelectBackground: '#f7f7fb',
     filterOptionColor: 'rgba(18, 20, 23, 0.2)',
     filterOptionColorHover: '#121417',
+    filterScrollColor: '#f3f3f3',
     favoriteIconStroke: 'rgba(255, 255, 255, 0.8)',
+
     modarOverlayColor: 'rgba(18, 20, 23, 0.5)',
     modalBgColor: '#fff',
     rentalCondLiBGColor: '#f9f9f9;',

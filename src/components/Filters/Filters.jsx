@@ -46,6 +46,24 @@ const customStyles = {
     ...provided,
     backgroundColor: '#fff',
     borderRadius: '14px',
+    paddingRight: '10px',
+  }),
+  menuList: provided => ({
+    ...provided,
+    '&::-webkit-scrollbar': {
+      width: '8px',
+      paddingRight: '8px',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      backgroundColor: '#f3f3f3',
+      borderRadius: '10px',
+      margin: '14px 8px',
+    },
+    '&::-webkit-scrollbar-track': {
+      backgroundColor: 'transparent',
+      borderRadius: '10px',
+      margin: '14px 8px',
+    },
   }),
   option: (provided, state) => ({
     ...provided,
@@ -92,7 +110,7 @@ export const Filters = () => {
       <SelectWrapper>
         <SelectLabel>Car brand</SelectLabel>
         <Select
-          placeholder="Enter the text"
+          placeholder="Choose a brand"
           name="carMakeFilter"
           id="make_filter"
           styles={customStyles}

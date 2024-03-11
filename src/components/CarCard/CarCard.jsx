@@ -19,12 +19,7 @@ import {
   removeFromFavorites,
   toggleSelectedCar,
 } from 'redux/cars/carsSlice';
-import {
-  selectToggleSelectedCar,
-  // selectfavoriteCars,
-} from 'redux/cars/carsSelectors';
-// import { NotificationManager } from 'react-notifications';
-// import { selectCars } from 'redux/cars/carsSelectors';
+import { selectToggleSelectedCar } from 'redux/cars/carsSelectors';
 
 export const CarCard = ({ car, openModal }) => {
   const {
@@ -51,9 +46,9 @@ export const CarCard = ({ car, openModal }) => {
   const addressParts = address.split(', ');
   const city = addressParts[1];
   const country = addressParts[2];
-  // const [isFavorite, setIsFavorite] = useState(false);
+
   const dispatch = useDispatch();
-  // const favoriteCars = useSelector(selectfavoriteCars);
+
   const selectedCarIds = useSelector(selectToggleSelectedCar);
   const isFavorite = selectedCarIds.includes(id);
 
