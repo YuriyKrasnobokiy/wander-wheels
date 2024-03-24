@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   FiltersBtn,
   FiltersWrapper,
@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setFilterWord } from 'redux/cars/carsSlice';
 import { selectFilterWord } from 'redux/cars/carsSelectors';
 import Select from 'react-select';
+import { useSearchParams } from 'react-router-dom';
 
 const filterOptions = [
   { value: '', label: 'All brands' },
@@ -88,10 +89,17 @@ const customStyles = {
 
 export const Filters = () => {
   const filterWord = useSelector(selectFilterWord);
+  const [selectedOption, setSelectedOption] = useState(filterWord);
   const dispatch = useDispatch();
-  const [selectedOption, setSelectedOption] = useState(
-    filterOptions.find(option => option.value === filterWord) || null
-  );
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    const make = searchParams.get('make');
+    if (make) {
+      setSelectedOption(filterOptions.find(option => option.value === make));
+      dispatch(setFilterWord(make));
+    }
+  }, [searchParams, dispatch]);
 
   const onChange = selectedOption => {
     setSelectedOption(selectedOption);
@@ -99,8 +107,10 @@ export const Filters = () => {
 
   const onSearchClick = () => {
     if (selectedOption) {
+      setSearchParams({ make: selectedOption.value });
       dispatch(setFilterWord(selectedOption.value));
     } else {
+      setSearchParams({ make: '' });
       dispatch(setFilterWord(''));
     }
   };
