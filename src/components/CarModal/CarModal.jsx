@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   CarModalDescr,
   CarModalFeatures,
@@ -21,12 +21,14 @@ import {
   RentalCondWrapper,
 } from './CardModal.styled';
 import { ReactComponent as IconCross } from 'assets/icons/crossSvg.svg';
-import { CarModel } from 'components/CarCard/CarCard.styled';
 import { closeModal } from 'redux/modal/modalSlice';
 import { useDispatch } from 'react-redux';
+import { CarModel } from 'components/CarCard/CarCard.styled';
 
 export const CarModal = ({ modalData }) => {
   const dispatch = useDispatch();
+  const contentRef = useRef(null);
+
   useEffect(() => {
     const handleKeyDown = evt => {
       if (evt.code === 'Escape') {
@@ -38,7 +40,6 @@ export const CarModal = ({ modalData }) => {
     document.body.style.overflow = 'hidden';
 
     return () => {
-      // componentWillUnmount(
       window.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'auto';
     };
@@ -69,26 +70,25 @@ export const CarModal = ({ modalData }) => {
     description,
   } = modalData;
 
-  ////Перетворив адресу на масив та розділив елементи по комі з пробілом////
   const addressParts = address.split(', ');
   const city = addressParts[1];
   const country = addressParts[2];
 
-  ////Перетворив умови оренди на масив та розділив елементи по \n////
   const rentalConditionsParts = rentalConditions.split('\n');
 
-  ////Форматую пробіг, типу тисячи комою відділені////
   const formattedMileage = mileage
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
-  ////Форматую ціну, щоб знак долара був в кінці ////
   const formattedPrice = rentalPrice.slice(1, 3);
   const formattedPriceCurrency = `${formattedPrice}$`;
 
   return (
     <CarModalWrapper onClick={handleOverlayClick}>
-      <ModalStyled>
+      <ModalStyled
+        ref={contentRef}
+        style={{ overflowY: 'auto', maxHeight: '90vh' }}
+      >
         <CloseButton onClick={() => dispatch(closeModal())} type="button">
           <IconCross />
         </CloseButton>

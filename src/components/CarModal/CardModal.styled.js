@@ -21,6 +21,7 @@ export const ModalStyled = styled.div`
   background-color: ${props => props.theme.colors.modalBgColor};
   border-radius: 10px;
   cursor: auto;
+  overflow-y: auto;
 `;
 
 export const CloseButton = styled.button`
